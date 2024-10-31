@@ -23,6 +23,8 @@
 #let display(x) = (vtable(x).display)(x)
 #let neg(x) = (vtable(x).neg)(x)
 #let abs(x) = (vtable(x).abs)(x)
+#let inv(x) = (vtable(x).inv)(x)
+#let sgn(x) = (vtable(x).sgn)(x)
 #let add(x, y) = {
   (x, y) = upcast(x, y)
   (vtable(x).add)(x, y)
@@ -38,4 +40,8 @@
 #let div(x, y) = {
   (x, y) = upcast(x, y)
   (vtable(x).div)(x, y)
+}
+#let cmp(x, y) = {
+  (x, y) = upcast(x, y)
+  (vtable(x).cmp)(x, y)
 }
